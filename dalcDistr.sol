@@ -431,7 +431,7 @@ contract Distributor {
         uint totalAmount = 0;
         uint k = 0;
         while (k <= Recipients.length-1) {
-            totalAmount += Recipients[k].tokenValue * 10 ** uint(tokenAddress.decimals()) / 1000;
+            totalAmount += (Recipients[k].tokenValue * 10 ** uint(tokenAddress.decimals())) / 1000;
             k++;
         }
         return totalAmount;
@@ -442,7 +442,7 @@ contract Distributor {
         uint totalAmount = 0;
         uint j = 0;
         while (j <= Recipients.length-1) {
-            totalAmount += Recipients[j].tokenValue * 10 ** uint(tokenAddress.decimals()) / 1000;
+            totalAmount += (Recipients[j].tokenValue * 10 ** uint(tokenAddress.decimals())) / 1000;
             j++;
         }
         address dalcDistrContractAddr = this;
@@ -452,7 +452,7 @@ contract Distributor {
         uint i = 0;
         while (i <= Recipients.length-1) {
             address _addr = Recipients[i].recipientAddress;
-            uint value = Recipients[i].tokenValue * 10 ** uint(tokenAddress.decimals()) / 1000;
+            uint value = (Recipients[i].tokenValue * 10 ** uint(tokenAddress.decimals())) / 1000;
             tokenAddress.transfer(_addr, value);
             i++;
         }
